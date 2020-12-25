@@ -6,7 +6,7 @@ from flask import jsonify
 
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:36network@localhost/app3user'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/app3user'
 db=SQLAlchemy(app)
 
 
