@@ -10,7 +10,7 @@ from flask import redirect
 
 app=Flask(__name__)
 app.config['SECRET_KEY']='I am Bapan'
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:36network@localhost/grocery'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/grocery'
 db=SQLAlchemy(app)
 
 
