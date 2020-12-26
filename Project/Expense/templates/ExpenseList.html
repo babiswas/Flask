@@ -1,0 +1,16 @@
+<DOCTYPE !html>
+<html>
+  <head>
+  </head>
+  <body>
+     <div>
+     <h1>ExpenseList</h1>
+     {% for expense in expenses %}
+         <h3>{{expense.item}}</h3>
+         <h3>{{expense.quantity}}</h3>
+         <h3>{{expense.price}}</h3>
+         <hr>
+     {% endfor %}
+     </div>
+  </body>
+</html>
