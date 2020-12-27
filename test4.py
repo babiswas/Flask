@@ -6,7 +6,7 @@ from flask import jsonify
 
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/app3user'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:36network@localhost/app3user'
 db=SQLAlchemy(app)
 
 
@@ -75,8 +75,22 @@ def add_users_group(userid,usergroupid):
     group.addgroup.append(user)
     db.session.commit()
     return jsonify({"created":True})
-    
 
+@app.route('/usergroup/<int:usergroupid>/users',methods=['GET'])
+def get_users_usergroup(usergroupid):
+    output=[]
+    users=User.query.join(user_usergroup).filter((user_usergroup.c.usergroup_id==usergroupid)&(user_usergroup.c.user_id==User.id)).all()
+    for user in users:
+       currentuser={}
+       currentuser["id"]=user.id
+       currentuser["email"]=user.email
+       currentuser["username"]=user.username
+       currentuser["firstname"]=user.firstname
+       currentuser["lastname"]=user.lastname
+       output.append(currentuser)
+    return jsonify(output)
+    
+    
 if __name__=="__main__":
    db.create_all()
    app.run(debug=True)
