@@ -1,0 +1,109 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']=''
+db=SQLAlchemy(app)
+
+class Example(db.Model):
+   __tablename__='example'
+   id=db.Column(db.Integer,primary_key=True)
+   data=db.Column(db.Unicode,nullable=False)
+
+   def __init__(self,data):
+       self.data=data
+   def __str__(self):
+       return f"{self.id}"
+
+if __name__=="__main__":
+   db.create_all()
+   app.run(debug=True)
+   e1=Example('Python')
+   e2=Example('C++')
+   e3=Example('PHP')
+   db.session.add_all([e1,e2,e3])
+   db.session.commit()
+
+
+CRUD in SQLAlchemy:
+Create data:
+
+e1=Example('Python')
+e2=Example('C++')
+e3=Example('PHP')
+db.session().add_all([e1,e2,e3])
+db.session.commit()
+
+e4=Example.query.filter_by(id=1).first()
+e4.data='Java'
+db.session.commit()
+
+
+Delete data:
+e1=Example.query.get(1)
+db.session.delete(e1)
+db.session.commit()
+
+
+One to many relation:
+
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+
+class Person(db.Model):
+  __tablename__='person'
+  id=db.Column(db.Integer,primary_key=True)
+  name=db.Column(db.String(200))
+  pets= db.relationship('pet',backref='owner')
+
+class Pet(db.Model):
+   __tablename__='pet'
+   id=db.Column(db.Integer,primary_key=True)
+   name=db.Column(db.String(20))
+   owner=db.Column(db.Integer,db.ForeignKey('person.id'))
+
+db.create_all()
+
+
+p1=Person('Bapan1')
+p2=Person('Bapan2')
+db.session.add_all([p1,p2])
+db.session.commit()
+pe1=Pet(name='Pussy',owner=1)
+pe2=Pet(name='Pussy1',owner=2)
+db.session.add_all([pe1,pe2])
+db.session.commit()
+
+
+app.after_request(sql_debug)
+
+Many to many relationship:
+
+
+subs=db.Table('subs',db.Column('user_id',db.Integer,db.ForeignKey('user.user_id')),db.Column('channel_id',db.Integer,db.ForeignKey('channel.channel_id')))
+
+class User(db.Model):
+    __tablename__='user'
+    user_id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(20))
+    subscriptions=db.relationship('channel'secondary=subs,backrefs=db.backrefs('subscribers',lazy='dynamic'))
+
+class Channel(db.Model):
+   __tablename__='channel'
+   channel_id=db.Column(db.Integer,primary_key=True)
+   channel_name=db.Column(db.String(200))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
