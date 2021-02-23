@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+{% block login %}
+     <div id="login">
+     <center>
+     <h1>Login</h1>
+     <form method="post">
+         <div>
+            <div><h3>{{form.email.label}}</h3></div>
+            <div>{{form.email}}</div>
+         </div>
+         <div>
+            <div><h3>{{form.password.label}}</h3></div>
+            <div>{{form.password}}</div>
+         </div>
+         <div>
+            <input type="submit" value="Login">
+         </div>
+     </form>
+     </center>
+     </div>
+{% endblock %}

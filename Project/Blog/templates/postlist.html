@@ -1,0 +1,32 @@
+{% extends "home.html" %}
+{% block content %}
+  <div id="posts">
+    <center>   
+     <div id="postsheader">
+         <h1>Your Posts</h1>
+     </div>
+    </center>
+     {% for post in posts %}
+      <div class="allposts">
+         <center><h3><a href="{{url_for('post_detail',id=post.id)}}">{{post.title}}</a></h3></center>
+         <div>
+         <p>{{post.content}}</p>
+         </div>
+      </div>
+     {% endfor %}
+     </div>
+     <div id="nextprev">
+        <ul>
+        <li>
+         {% if prev_url %}
+            <a href={{prev_url}}>Prev</a>
+         {% endif %}
+        </li>
+        <li>
+         {% if next_url %}
+             <a href={{next_url}}>Next</a>
+         {% endif %}
+        </li>
+       </ul>
+     </div>
+{% endblock %}

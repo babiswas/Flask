@@ -1,0 +1,26 @@
+{% extends "home.html" %}
+
+{% block postform %}
+<div>
+ <center>
+   <div id="createpost">
+    <h1>Create Post</h1>
+    <form method="post">
+         <div>
+            <div><h3>{{form.title.label}}</h3></div>
+            <div>{{form.title}}</div>
+         </div>
+         <div>
+            <div><h3>{{form.content.label}}</h3></div>
+            <div>{{form.content(cols=100,rows=20)}}</div>
+         </div>
+         <div>
+            <input type="submit" value="Submit">
+         </div>
+     </form>
+   </div>
+  </center>
+</div>
+{% endblock %}
+
+

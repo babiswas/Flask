@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='./main.css')}}">
+</head>
+    <body>
+        <header>
+               <center><h1>Pyhack</h1></center>
+               <hr>
+        </header>
+        <nav class="navbar">
+           <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="{{url_for('post_list')}}">Posts</a></li>
+              <li><a href="{{url_for('add_post')}}">Add Post</a></li>
+              <li><a href="{{url_for('register')}}">Signup</a></li>
+              <li><a href="{{url_for('login')}}">Login</a></li>
+              <li><a href="{{url_for('logout')}}">Logout</a></li>
+           </ul>
+        </nav>
+        <div>
+           {% block signup %}
+           {% endblock %}
+           {% block login %}
+           {% endblock %}
+           {% block postform %}
+           {% endblock %}
+           {% block content %}
+           {% endblock %}
+           {% block post_detail %}
+           {% endblock %}
+        </div>
+    </body>
+</html>
