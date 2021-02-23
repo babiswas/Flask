@@ -1,0 +1,148 @@
+body{
+background-color:blaze;
+color:Orange;
+font-family:fantasy;
+}
+
+h1{
+ size:70px;
+}
+
+.navbar{
+   background-color:white;
+   text-align:center;
+   margin-right:-8px;
+   margin-left:-8px;
+   height:60px;
+}
+
+.navbar ul li{
+   display:inline-block;
+   margin-right:130px;
+}
+
+.navbar ul li a{
+   text-decoration:none;
+   color:orange; 
+}
+
+
+hr{
+  width:65%;
+  align:center;
+}
+
+.signup{
+  border-radius:5px;
+  font-family:cursive;
+  color:white;
+  background-color:orange;
+  width:50%;
+  margin-left:25%;
+  margin-right:25%;
+}
+
+input{
+  width:50%;
+  box-sizing:border-box;
+  height:40px;
+}
+
+input[type=submit]{
+   background-color:white;
+   margin-top:8px;
+   width:30%;
+   color:orange;
+   margin-bottom:8px;
+}
+
+#login{
+   width:50%;
+   margin-right:25%;
+   margin-left:25%;
+   background-color:orange;
+   color:white;
+   font-family:cursive;
+   border-radius:8px;
+}
+
+#createpost{
+  background-color:orange;
+  color:white;
+  font-family:cursive;
+  width:80%;
+}
+
+#posts{
+  font-family:cursive;
+}
+
+#postsheader{
+  background-color:orange;
+  color:white;
+}
+
+.allposts{
+  width:80%;
+  margin-right:10%;
+  margin-left:10%;
+  border-color:orange;
+  background-color:green;
+  font-family:cursive;
+  border-radius:7px;
+  padding:20px,20px,20px,20px;
+  text-overflow:ellipsis;
+  height:30%;
+}
+
+.allposts p{
+  margin-right:25%;
+  margin-left:25%;
+}
+
+.allposts center h3 a{
+   text-decoration:none;
+   color:white;
+}
+
+#postdetail{
+   background-color:green;
+   color:white;
+   font-family:cursive;
+   margin-left:10%;
+   margin-right:10%;
+   width:80%;
+   padding:80px,80px,80px,80px;
+   height:auto;
+   border-radius:5px;
+}
+
+#postcontent{
+  margin-left:30px;
+  color:orange;
+}
+
+#nextprev{
+  width:8%;
+  height:10%;
+  display:flex;
+  margin-left:46%;
+  margin-right:46%;
+  margin-top:15px;
+  background-color:black;
+  border-radius:8px;
+  color:white;
+  text-align:center;
+}
+
+#nextprev ul li{
+  display:inline-block;
+  margin-right:25%;
+}
+
+
+#nextprev ul li a{
+  text-decoration:none;
+  color:white;
+}
+
