@@ -1,0 +1,318 @@
+header{
+    background-color:#4b0082;
+    color:white;
+    width:40%;
+    border-radius:15px;
+    margin-top:-10px;
+    padding:4px;
+    margin-left:30%;
+    margin-right:30%;
+    position:sticky;
+}
+
+body{
+    background-color:#ffffff;
+    color:#4b0082;
+}
+
+
+.navbar{
+    font-size:24px;
+}
+
+.navbar ul li{
+    display:inline-block;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+}
+
+.account{
+    background-color:white;
+    color:#4b0082;
+    width:30%;
+    margin-right:35%;
+    margin-left:35%;
+    height:auto;
+    box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+    border-radius:5px;
+    padding:40px;
+}
+
+
+.panel{
+    background-color:#4b0082;
+    color:white;
+    font-size:15px;
+    width:98%;
+    height:10%;
+    padding:2px;
+    overflow:hidden;
+}
+
+.account input[type=text]{
+    width:80%;
+    padding:12px 20px;
+    outline:none;
+    border:0;
+    box-shadow:0px 0px 4px rgba(0,0,0,.5);
+    border-radius:4px;
+}
+
+.account input[type=submit]{
+    margin-top:14px;
+    margin-bottom:14px;
+    background-color:#4b0082;
+    height:40px;
+    width:80px;
+    color:white;
+    border:0;
+    border-radius:3px;
+}
+
+
+#rootuser{
+background-color:white;
+color:#4b0082;
+width:30%;
+margin-right:35%;
+margin-left:35%;
+height:auto;
+box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+border-radius:5px;
+padding:40px;
+}
+
+#rootuser input[type=text]{
+    width:80%;
+    padding:12px 20px;
+    outline:none;
+    border:0;
+    box-shadow:0px 0px 4px rgba(0,0,0,.5);
+    border-radius:4px;
+}
+
+#rootuser input[type=submit]{
+    margin-top:14px;
+    margin-bottom:14px;
+    background-color:#4b0082;
+    height:40px;
+    width:80px;
+    color:white;
+    border:0;
+    border-radius:3px;
+}
+
+
+#usergroup{
+background-color:white;
+color:#4b0082;
+width:30%;
+margin-right:35%;
+margin-left:35%;
+height:auto;
+box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+border-radius:5px;
+padding:40px;
+}
+
+
+#usergroup input[type=text]{
+    width:80%;
+    padding:12px 20px;
+    outline:none;
+    border:0;
+    box-shadow:0px 0px 4px rgba(0,0,0,.5);
+    border-radius:4px;
+}
+
+
+#usergroup input[type=submit]{
+    margin-top:14px;
+    margin-bottom:14px;
+    background-color:#4b0082;
+    height:40px;
+    width:80px;
+    color:white;
+    border:0;
+    border-radius:3px;
+}
+
+
+table{
+    width:30%;
+    border:1px solid black;
+    border-collapse:collapse;
+  }
+  
+  #mytable{
+    margin-top:20px;
+  }
+  
+  #mytable td ,#mytable th{
+    border:1px solid #ddd;
+    padding:8px;
+  }
+  
+  #mytable th{
+    background-color:#4b0082;
+    color:white;
+  }
+  
+  #mytable td{
+    background-color:#fffff1;
+    color:#4b0082;
+  }
+
+
+  #userpanel{
+    background-color:white;
+    color:#4b0082;
+    width:30%;
+    margin-right:35%;
+    margin-left:35%;
+    height:auto;
+    box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+    border-radius:5px;
+    margin-top:40px;
+    padding:20px;
+  }
+
+  #departmentpanel{
+    background-color:white;
+    color:#4b0082;
+    width:30%;
+    margin-right:35%;
+    margin-left:35%;
+    height:auto;
+    box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+    border-radius:5px;
+    margin-top:40px;
+    padding:20px;
+  }
+
+  #dashboard{
+      width:100%;
+      display:inline-block;
+  }
+
+  #createuser{
+    background-color:white;
+    color:#4b0082;
+    width:30%;
+    margin-right:35%;
+    margin-left:35%;
+    height:auto;
+    box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+    border-radius:5px;
+    margin-top:40px;
+    padding:20px;
+  }
+
+  #createuser input[type=text]{
+    width:80%;
+    padding:12px 20px;
+    outline:none;
+    border:0;
+    box-shadow:0px 0px 4px rgba(0,0,0,.5);
+    border-radius:4px;
+}
+
+
+#createuser input[type=submit]{
+    margin-top:14px;
+    margin-bottom:14px;
+    background-color:#4b0082;
+    height:40px;
+    width:80px;
+    color:white;
+    border:0;
+    border-radius:3px;
+}
+
+#groupuser{
+  background-color:white;
+  color:#4b0082;
+  width:30%;
+  margin-right:35%;
+  margin-left:35%;
+  height:auto;
+  box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+  border-radius:5px;
+  margin-top:40px;
+  padding:20px;
+}
+
+.panel1{
+  background-color:#4b0082;
+    color:white;
+    font-size:15px;
+    width:30%;
+    margin-right:35%;
+    margin-left:35%;
+    height:8%;
+    padding:2px;
+    overflow:hidden;
+    margin-top:40px;
+    margin-bottom:40px;
+    border-radius:4px;
+    padding:4px;
+}
+
+.panel1 p a{
+  text-decoration:none;
+  color:white;
+}
+
+
+#usergrouppanel{
+  width:100%;
+  height:20%;
+  display:inline-block;
+  background-color:white;
+  color:#4b0082;
+  box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+  border-radius:5px;
+  padding:40px;
+  margin-bottom:20px;
+  margin-top:20px;
+  }
+
+
+  #adminaction{
+     width:15%;
+     height:15%;
+     margin-left:20px;
+     margin-right:20px;
+     background-color:white;
+     color:#4b0082;
+     box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+     float:left;
+     border-radius:5px;
+     overflow:hidden;
+  }
+
+  #usergroupdetail{
+  width:100%;
+  height:auto;
+  background-color:white;
+  color:#4b0082;
+  height:auto;
+  box-shadow:0px 0px 20px 5px rgba(0,0,0,.5);
+  border-radius:5px;
+  padding:40px;
+  margin-bottom:20px;
+  margin-top:20px;
+
+  }
+
+
+
+
+
+
+
+
