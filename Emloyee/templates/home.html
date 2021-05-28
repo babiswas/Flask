@@ -1,0 +1,28 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='./main.css')}}">
+</head>
+<body>
+        <header>
+               <center><h1>Employee Tracker</h1></center>
+        </header>
+        <nav class="navbar">
+           <center>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Posts</a></li>
+                <li><a href="">Add Post</a></li>
+                <li><a href="">Signup</a></li>
+                <li><a href="">Login</a></li>
+                <li><a href="">Logout</a></li>
+             </ul>
+           </center>
+        </nav>
+        <div>
+           {% block signup %}
+           {% endblock %}
+           {% block content %}
+           {% endblock %}
+        </div>
+</body>
+</html>
