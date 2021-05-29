@@ -3,12 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import check_password_hash
 from werkzeug.security import generate_password_hash
 from flask import redirect,render_template,url_for,session,request
-from form import AccountForm,RegisterForm,UserForm,GroupForm,LoginForm,UserUpdateForm
+from form import AccountForm,RegisterForm,UserForm,GroupForm,LoginForm,UserUpdateForm,AddToGroupForm
+from requests import post
 
 app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:36network@localhost/app2'
 app.config['SECRET_KEY']="I am Bapan"
 db=SQLAlchemy(app)
+BASE_URL="http://127.0.0.1:5000"
 
 
 
@@ -110,7 +112,7 @@ class AllUser(db.Model):
             self.account_id=accountId
 
         def __str__(self):
-            return f"{self.userid} user role"
+            return f"{self.userid} user role" 
 
 
 @app.route('/account',methods=['GET','POST'])
@@ -292,7 +294,32 @@ def logout():
     return redirect(url_for('login'))
 
 
-    
+@app.route('/usergroup/<int:usergroupid>',methods=["GET","POST"])
+def usergroup_detail(usergroupid):
+        form=AddToGroupForm()
+        group=UserGroup.query.get(usergroupid)
+        admin=Admin.query.filter_by(userid=session["userid"]).first()
+        if admin.is_admin==True:
+            if request.method=="POST" and form.validate:
+                email=request.form["email"]
+                print(email)
+                user=User.query.filter_by(email=email).first()
+                response=post("http://127.0.0.1:5000"+"/userGroup/"+str(usergroupid)+"/user/"+str(user.id))
+                if response.status_code!=200:
+                   raise Exception
+                return redirect(url_for('get_users_group',group_id=usergroupid))
+        return render_template("user_usergroup.html",form=form,group=group)
+                
+
+@app.route('/userGroup/<int:usergroupid>/user/<int:userid>',methods=["POST"])
+def add_user_usergroup(usergroupid,userid):
+            group=UserGroup.query.filter_by(id=usergroupid).first()
+            user=User.query.get(userid)
+            group.addgroup.append(user)
+            db.session.commit()
+            return "200"
+
+
 if __name__=="__main__":
    db.create_all()
    app.run(debug=True)
