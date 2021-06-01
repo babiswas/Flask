@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+{% block content %}
+<div id="dashboard">
+    <center>
+        <div id="dashboard">
+            <div class="panel">
+                <h2>{{group.groupname}}</h2>
+            </div>
+            <h4>{{group.description}}</h4>
+        </div>
+    </center>
+    <div id="userpanel">
+        <center>
+            <div class="panel">
+                <h2>Employees</h2>
+             </div>
+             <div>
+                    <table id="mytable">
+                        <tr>
+                            <th>Uername</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                        </tr>
+                        {% for user in users %}
+                        <tr>
+                           <td>{{user.username}}</td>
+                           <td>{{user.firstname}}</td>
+                           <td>{{user.lastname}}</td>
+                           <td>{{user.email}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table> 
+             </div>
+        </center>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+{% block signup %}
+<div id="usergroup">
+    <center>
+        <div class="panel">
+            <h2>Add UserGroup</h2>
+        </div>
+        <form method="post">
+            <div>
+               <div><h3>{{form.groupname.label}}</h3></div>
+               <div>{{form.groupname}}</div>
+            </div>
+            <div>
+                <div><h3>{{form.description.label}}</h3></div>
+                <div>{{form.description}}</div>
+            </div>
+            <div>
+               <input type="submit" value="Submit">
+            </div>
+        </form>
+    </center>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "home.html" %}
+{% block signup %}
+  <div>
+    <center>
+        <div id="userdetails">
+            <div class="panel">
+                <h3>User Details</h3>
+            </div>
+            <h4><strong>Usename:</strong>{{user.username}}</h4>
+            <h4><strong>Email:</strong>{{user.email}}</h4>
+            <h4><strong>Firstname:</strong>{{user.firstname}}</h4>
+            <h4><strong>LastName:</strong>{{user.lastname}}</h4>
+        </div>
+    </center>
+        <div id="userdetails">
+            <center>
+                <div class="panel">
+                    <h3>User Groups</h3>
+                </div> 
+            </center>
+            {% for group in groups %}
+                <div id="userdetails">
+                    {% if permission.is_admin %}
+                    <div id="adminaction">
+                        <center>
+                            <h3><a href="{{url_for('read.get_users_group',group_id=group.id)}}">{{group.groupname}}</a></h3>
+                            <h3>{{group.description}}</h3>
+                        </center>
+                    </div>
+                    {% endif %}
+                    {% if not permission.is_admin %}
+                    <div id="adminaction">
+                        <div class="panel">
+                            <h3>{{group.groupname}}</h3>
+                        </div>
+                        <h3>{{group.description}}</h3>
+                    </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    <center>
+        {% if permission.is_admin %}
+        <div id="userdetails">
+            <div class="panel">
+                <h3>Admin Actions</h3>
+            </div> 
+                    <div class="panel1">
+                        <p><a href="{{url_for('read.admin_home')}}">Admin Home</a></p>
+                    </div>
+                    <div class="panel1">
+                        <p><a href="{{url_for('add.add_user')}}">Add User</a></p>
+                    </div>
+                    <div class="panel1">
+                        <p><a href="{{url_for('add.add_group')}}">Add Group</a></p>
+                    </div>
+        </div>
+        {% endif %}
+    </center>
+   </div>
+{% endblock %}

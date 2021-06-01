@@ -1,0 +1,51 @@
+{% extends "home.html" %}
+{% block content %}
+<div id="dashboard">
+    <div id="userpanel">
+        <center>
+            <div class="panel">
+                <h2>Employees</h2>
+             </div>
+             <div>
+                    <table id="mytable">
+                        <tr>
+                            <th>Uername</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                        </tr>
+                        {% for user in users %}
+                        <tr>
+                           <td>{{user.username}}</td>
+                           <td>{{user.firstname}}</td>
+                           <td>{{user.lastname}}</td>
+                           <td>{{user.email}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table> 
+             </div>
+        </center>
+    </div>
+    <div id="departmentpanel">
+        <center>
+            <div class="panel">
+                <h2>Departments</h2>
+            </div>
+            <div>
+                <table id="mytable">
+                    <tr>
+                        <th>GroupName</th>
+                        <th>Description</th>
+                    </tr>
+                    {% for group in groups %}
+                    <tr>
+                       <td><a href="{{url_for('add.usergroup_detail',usergroupid=group.id)}}">{{group.groupname}}</a></td>
+                       <td>{{group.description}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </center>
+    </div>
+</div>
+{% endblock %}
